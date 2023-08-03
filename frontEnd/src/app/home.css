@@ -1,0 +1,120 @@
+html, body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #cacfef;
+}
+
+.cadastro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #000049;
+  color: #fff;
+}
+
+.cadastro p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.voltar {
+  padding: 5px 10px;
+  background-color: #2e18b8;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.voltar:hover {
+  opacity: 0.8;
+}
+
+
+.socorro
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.produto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.produto-card {
+  margin-top: 1%;
+  width: 300px;
+  margin-bottom: 20px;
+  border: 1px solid #acabab;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.produto-imagem {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.imagem-produto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.produto-conteudo {
+  padding: 10px;
+}
+
+.produto-titulo {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.produto-data {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.produto-preco {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.produto-descricao {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.ver-mais-link {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #0f086e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.excluir-button {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #0f086e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.excluir-button:hover,
+.ver-mais-link:hover {
+  opacity: 0.8;
+}
