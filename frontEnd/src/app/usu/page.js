@@ -7,6 +7,7 @@ export default function Usu() {
   // Step 1: states da loja 
   const [cart, setCart] = useState([]);
   const [produtos, setProdutos] = useState([]);
+  const [showCart, setShowCart] = useState(false); // Adiciona estado para controlar a exibição do carrinho
   const router = useRouter();
 
   // Step 2: adiciona produtos no carrinho
@@ -62,21 +63,25 @@ export default function Usu() {
           </div>
         ))}
       </div>
-      <div className='carrinho'>
-        <h2>Carrinho</h2>
-        {cart.length === 0 ? (
-          <p>O carrinho está vazio</p>
-        ) : (
-          <>
-            {cart.map((product) => (
-              <div key={product.id}>
-                <p>{product.titulo} - R$ {product.preco}</p>
-              </div>
-            ))}
-            <button onClick={sendWhatsAppMessage}>Comprar no WhatsApp</button>
-          </>
-        )}
-      </div>
+      <button onClick={() => setShowCart(!showCart)}>Carrinho</button> {/* Adiciona botão para alternar entre mostrar e ocultar o carrinho */}
+      {showCart && ( // Adiciona condição para exibir o carrinho somente se showCart for true
+        <div className='carrinho'>
+          <h2>Carrinho</h2>
+          {cart.length === 0 ? (
+            <p>O carrinho está vazio</p>
+          ) : (
+            <>
+              {cart.map((product) => (
+                <div key={product.id}>
+                  <p>{product.titulo} - R$ {product.preco}</p>
+                </div>
+              ))}
+              <button onClick={sendWhatsAppMessage}>Comprar no WhatsApp</button>
+            </>
+          )}
+        </div>
+      )}
     </main>
   );
 }
+
