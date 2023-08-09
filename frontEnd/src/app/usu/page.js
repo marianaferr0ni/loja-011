@@ -9,6 +9,9 @@ export default function Usu() {
   const [produtos, setProdutos] = useState([]);
   const [showCart, setShowCart] = useState(false); // Adiciona estado para controlar a exibição do carrinho
   const router = useRouter();
+  
+  // Step 1.1: Add a new state for the search term
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Step 2: adiciona produtos no carrinho
   const addToCart = (produto) => {
@@ -42,11 +45,21 @@ export default function Usu() {
     };
     fetchProdutos();
   }, []);
+  
+  // Step 4.1: Filter the products based on the search term
+  const filteredProducts = produtos.filter((produto) =>
+    produto.titulo.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <main>
+      <input
+        type="text"
+        placeholder="Search by name"
+        onChange={(event) => setSearchTerm(event.target.value)}
+      />
       <div className='produto'>
-        {produtos.map((produto) => (
+        {filteredProducts.map((produto) => (
           <div className='produto-card' key={produto.id}>
             <div className='produto-imagem'>
               <img className='imagem-produto' src={produto.imagem} alt={produto.titulo} />
@@ -84,4 +97,3 @@ export default function Usu() {
     </main>
   );
 }
-
