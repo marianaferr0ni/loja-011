@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'; // Import the useState and useEffect hooks
 import { useRouter } from 'next/navigation';
 import '../home.css'
+import './usu.css'
 
 export default function Usu() {
   // Step 1: states da loja 
@@ -58,6 +59,33 @@ export default function Usu() {
         placeholder="Search by name"
         onChange={(event) => setSearchTerm(event.target.value)}
       />
+
+<div className="side-menu">
+      <a href="#">Acessorios</a>
+      <a href="#">Boné</a>
+      <a href="#">Camisetas</a>
+      <a href="#">Shorts</a>
+      <a href="#">Chinelo</a>
+      <button onClick={() => setShowCart(!showCart)}>Carrinho</button> {/* Adiciona botão para alternar entre mostrar e ocultar o carrinho */}
+      {showCart && ( // Adiciona condição para exibir o carrinho somente se showCart for true
+        <div className='carrinho'>
+          <h2>Carrinho</h2>
+          {cart.length === 0 ? (
+            <p>O carrinho está vazio</p>
+          ) : (
+            <>
+              {cart.map((product) => (
+                <div key={product.id}>
+                  <p>{product.titulo} - R$ {product.preco}</p>
+                </div>
+              ))}
+              <button onClick={sendWhatsAppMessage}>Comprar no WhatsApp</button>
+            </>
+          )}
+        </div>
+      )}
+    </div>
+    <section className='main-content'>
       <div className='produto'>
         {filteredProducts.map((produto) => (
           <div className='produto-card' key={produto.id}>
@@ -94,6 +122,7 @@ export default function Usu() {
           )}
         </div>
       )}
+      </section>
     </main>
   );
 }

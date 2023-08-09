@@ -1,0 +1,42 @@
+/* Add styles for the side menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.side-menu a:hover {
+  background-color: #111;
+}
+
+/* Add styles for the main content */
+.main-content {
+  margin-left: 200px;
+}
+
+@media (max-width: 600px) {
+  /* Make the side menu responsive */
+  .side-menu {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
