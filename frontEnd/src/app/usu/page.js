@@ -54,19 +54,16 @@ export default function Usu() {
 
   return (
     <main>
+    <section className='main-content'>
+      <header className='header'>
       <input
         type="text"
         placeholder="Search by name"
         onChange={(event) => setSearchTerm(event.target.value)}
+        className='search'
       />
-
-<div className="side-menu">
-      <a href="#">Acessorios</a>
-      <a href="#">Boné</a>
-      <a href="#">Camisetas</a>
-      <a href="#">Shorts</a>
-      <a href="#">Chinelo</a>
-      <button onClick={() => setShowCart(!showCart)}>Carrinho</button> {/* Adiciona botão para alternar entre mostrar e ocultar o carrinho */}
+        <img src="./logo.jpg" alt='logo'></img>
+        <button onClick={() => setShowCart(!showCart)} className='button'>Carrinho</button> {/* Adiciona botão para alternar entre mostrar e ocultar o carrinho */}
       {showCart && ( // Adiciona condição para exibir o carrinho somente se showCart for true
         <div className='carrinho'>
           <h2>Carrinho</h2>
@@ -79,13 +76,13 @@ export default function Usu() {
                   <p>{product.titulo} - R$ {product.preco}</p>
                 </div>
               ))}
-              <button onClick={sendWhatsAppMessage}>Comprar no WhatsApp</button>
+              <button onClick={sendWhatsAppMessage} className='button'>Comprar no WhatsApp</button>
             </>
           )}
         </div>
       )}
-    </div>
-    <section className='main-content'>
+      </header>
+      
       <div className='produto'>
         {filteredProducts.map((produto) => (
           <div className='produto-card' key={produto.id}>
@@ -98,13 +95,13 @@ export default function Usu() {
               <p className='produto-preco'>R$ {produto.preco}</p>
               <p className='produto-descricao'>{produto.descricao}</p>
               <div className='socorro'>
-                <button onClick={() => addToCart(produto)} className='adicionar-button'>Adicionar ao Carrinho</button>
+                <button onClick={() => addToCart(produto)} className='button'>Adicionar ao Carrinho</button>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <button onClick={() => setShowCart(!showCart)}>Carrinho</button> {/* Adiciona botão para alternar entre mostrar e ocultar o carrinho */}
+      <button onClick={() => setShowCart(!showCart)} className='button'>Carrinho</button> {/* Adiciona botão para alternar entre mostrar e ocultar o carrinho */}
       {showCart && ( // Adiciona condição para exibir o carrinho somente se showCart for true
         <div className='carrinho'>
           <h2>Carrinho</h2>
@@ -117,7 +114,7 @@ export default function Usu() {
                   <p>{product.titulo} - R$ {product.preco}</p>
                 </div>
               ))}
-              <button onClick={sendWhatsAppMessage}>Comprar no WhatsApp</button>
+              <button onClick={sendWhatsAppMessage} className='button'>Comprar no WhatsApp</button>
             </>
           )}
         </div>

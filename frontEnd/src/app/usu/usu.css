@@ -23,7 +23,28 @@
 
 /* Add styles for the main content */
 .main-content {
-  margin-left: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.button {
+  background-color: #b33e1d; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.search{
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+}
+.header{
+  display: flex;
+  justify-content: space-around;
 }
 
 @media (max-width: 600px) {
